@@ -68,7 +68,6 @@ export class AuthenticationService {
         Authorization: "Bearer "+this.auth?.token!,
       }
     }).subscribe((v)=>{
-      console.log(v);
       if(v.success){
         this.auth.user = v.data;
         this.state.next(true);

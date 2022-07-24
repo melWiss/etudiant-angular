@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BlogService } from 'src/app/services/blog/blog-service.service';
 
 @Component({
   selector: 'app-blogs',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public blogService:BlogService) { }
 
   ngOnInit(): void {
   }

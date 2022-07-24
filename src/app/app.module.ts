@@ -15,12 +15,14 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BlogsComponent } from './components/blogs/blogs.component';
+import { UserAvatarComponent } from './components/user-avatar/user-avatar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthenticationComponent,
-    BlogsComponent
+    BlogsComponent,
+    UserAvatarComponent,
   ],
   imports: [
     BrowserModule,
