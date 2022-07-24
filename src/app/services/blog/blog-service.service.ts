@@ -5,7 +5,7 @@ import { baseUrl } from 'src/app/consts';
 @Injectable({
   providedIn: 'root'
 })
-export class BlogServiceService {
+export class BlogService {
 
   constructor(private http: HttpClient) { }
 

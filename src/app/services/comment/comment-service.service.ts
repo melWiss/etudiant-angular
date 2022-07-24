@@ -5,7 +5,7 @@ import { baseUrl } from 'src/app/consts';
 @Injectable({
   providedIn: 'root'
 })
-export class CommentServiceService {
+export class CommentService {
 
   constructor(private http:HttpClient) { }
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './services/auth/authentication-service.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'etudiant';
 
-  authenticated = () => localStorage.getItem("token") != null;
+  constructor(public auth:AuthenticationService){}
 }

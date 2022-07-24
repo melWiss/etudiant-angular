@@ -1,1 +1,16 @@
-<p>authentication works!</p>
+<mat-grid-list [cols]="3">
+    <mat-grid-tile colspan="1"></mat-grid-tile>
+    <mat-grid-tile colspan="1">
+        <mat-card>
+            <mat-card-title>Sign in</mat-card-title>
+            <div>
+                <h2 for="email">Email</h2>
+                <input type="email" [formControl]="email" id="email" />
+                <h2 for="password">Password</h2>
+                <input type="password" [formControl]="password" id="password" /><br>
+                <button mat-raised-button style="margin: 10px;" (click)="login()">Sign in</button>
+            </div>
+        </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile colspan="1"></mat-grid-tile>
+</mat-grid-list>

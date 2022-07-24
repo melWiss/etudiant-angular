@@ -11,10 +11,10 @@
 <mat-toolbar color="primary">
   <span>Blog App</span>
   <span class="example-spacer"></span>
-  <button mat-icon-button>
+  <button *ngIf="auth.state.value" mat-icon-button (click)="auth.logout()">
     <mat-icon>logout</mat-icon>
   </button>
 
 </mat-toolbar>
-<router-outlet *ngIf="authenticated()"></router-outlet>
-<app-authentication *ngIf="!authenticated()"></app-authentication>
+<router-outlet *ngIf="auth.state.value"></router-outlet>
+<app-authentication *ngIf="!auth.state.value"></app-authentication>
