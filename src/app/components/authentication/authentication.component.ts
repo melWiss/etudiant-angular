@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { AuthenticationService } from '../services/auth/authentication-service.service';
+import { AuthenticationService } from '../../services/auth/authentication-service.service';
 
 @Component({
   selector: 'app-authentication',
