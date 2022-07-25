@@ -1,0 +1,9 @@
+<div style="margin: 20px;">
+    <h2>Title</h2>
+    <input type="text" [formControl]="title" />
+    <h2>Text</h2>
+    <input type="text" [formControl]="text" />
+    <h2>Picture</h2>
+    <input type="file" (change)="onSelectFile($event)" accept="image/png, image/jpeg" />
+    <button mat-flat-button color="primary" (click)="submit()">Submit</button>
+</div>

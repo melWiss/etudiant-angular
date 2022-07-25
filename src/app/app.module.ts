@@ -23,6 +23,9 @@ import { AdminBlogsComponent } from './components/admin-blogs/admin-blogs.compon
 import { AdminUsersComponent } from './components/admin-users/admin-users.component';
 import { AdminCommentsComponent } from './components/admin-comments/admin-comments.component';
 import {MatTableModule} from '@angular/material/table';
+import { NewBlogComponent } from './components/new-blog/new-blog.component';
+import { NewUserComponent } from './components/new-user/new-user.component';
+import { NewCommentComponent } from './components/new-comment/new-comment.component';
 
 
 @NgModule({
@@ -35,6 +38,9 @@ import {MatTableModule} from '@angular/material/table';
     AdminBlogsComponent,
     AdminUsersComponent,
     AdminCommentsComponent,
+    NewBlogComponent,
+    NewUserComponent,
+    NewCommentComponent,
   ],
   imports: [
     BrowserModule,

@@ -61,8 +61,34 @@ export class BlogService {
           Authorization: "Bearer " + localStorage.getItem("token"),
         }
       }
-    ).subscribe((v)=>{
-      if(v.success)
+    ).subscribe((v) => {
+      if (v.success)
+        this.all();
+    });
+  }
+  update(id: number, blog: Blog) {
+    this.http.put<ResponseData<Blog>>(baseUrl + "/admin/blog/" + id,
+      blog,
+      {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        }
+      }
+    ).subscribe((v) => {
+      if (v.success)
+        this.all();
+    });
+  }
+  add(blog: Blog) {
+    this.http.post<ResponseData<Blog>>(baseUrl + "/admin/blog",
+      blog,
+      {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        }
+      }
+    ).subscribe((v) => {
+      if (v.success)
         this.all();
     });
   }

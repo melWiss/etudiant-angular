@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Blog } from 'src/app/models/blog';
 import { BlogService } from 'src/app/services/blog/blog-service.service';
 
@@ -9,7 +10,7 @@ import { BlogService } from 'src/app/services/blog/blog-service.service';
 })
 export class AdminBlogsComponent implements OnInit {
 
-  constructor(public blogService:BlogService) { }
+  constructor(public blogService:BlogService, private router:Router) { }
 
   public dataSource?:Blog[];
   public displayedColumns: string[] = ['id', 'title', 'user', 'avatar', 'created_at', 'actions'];
@@ -19,6 +20,10 @@ export class AdminBlogsComponent implements OnInit {
     this.blogService.blogs.subscribe((v)=>{
       this.dataSource = v;
     });
+  }
+
+  add(){
+    this.router.navigateByUrl("/admin/blogs/new");
   }
 
 }
