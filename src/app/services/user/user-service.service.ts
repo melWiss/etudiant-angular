@@ -13,8 +13,8 @@ export class UserService {
 
   constructor(private http: HttpClient, private authService: AuthenticationService) { }
 
-  users: BehaviorSubject<User[] | null> = new BehaviorSubject<User[] | null>(null);
-  user: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
+  public users: BehaviorSubject<User[] | null> = new BehaviorSubject<User[] | null>(null);
+  public user: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
 
   get(id:number) {
     this.http.get<ResponseData<User>>(baseUrl + "/admin/users/"+id, {
