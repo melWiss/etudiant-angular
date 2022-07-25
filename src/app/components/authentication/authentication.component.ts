@@ -10,6 +10,7 @@ import { AuthenticationService } from '../../services/auth/authentication-servic
 export class AuthenticationComponent implements OnInit {
 
   email = new FormControl('');
+  name = new FormControl('');
   password = new FormControl('');
 
   constructor(private authService:AuthenticationService) { }
@@ -19,6 +20,9 @@ export class AuthenticationComponent implements OnInit {
 
   login() {
     this.authService.login(this.email.value, this.password.value);
+  }
+  register() {
+    this.authService.signup(this.name.value,this.email.value, this.password.value);
   }
 
 }

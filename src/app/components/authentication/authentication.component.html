@@ -1,6 +1,6 @@
-<mat-grid-list [cols]="3">
+<mat-grid-list [cols]="4">
     <mat-grid-tile colspan="1"></mat-grid-tile>
-    <mat-grid-tile colspan="1">
+    <mat-grid-tile colspan="2">
         <mat-card>
             <mat-card-title>Sign in</mat-card-title>
             <div>
@@ -9,6 +9,19 @@
                 <h2 for="password">Password</h2>
                 <input type="password" [formControl]="password" id="password" /><br>
                 <button mat-raised-button style="margin: 10px;" (click)="login()">Sign in</button>
+            </div>
+        </mat-card>
+        <div style="margin: 20px;"></div>
+        <mat-card>
+            <mat-card-title>Sign up</mat-card-title>
+            <div>
+                <h2 for="name">Name</h2>
+                <input type="text" [formControl]="name" id="name" />
+                <h2 for="email">Email</h2>
+                <input type="email" [formControl]="email" id="email" />
+                <h2 for="password">Password</h2>
+                <input type="password" [formControl]="password" id="password" /><br>
+                <button mat-raised-button style="margin: 10px;" (click)="register()">Sign up</button>
             </div>
         </mat-card>
     </mat-grid-tile>

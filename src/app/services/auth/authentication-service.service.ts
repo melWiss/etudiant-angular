@@ -6,13 +6,14 @@ import { baseUrl } from 'src/app/consts';
 import { Authentication } from 'src/app/models/auth';
 import { ResponseData } from 'src/app/models/response';
 import { User } from 'src/app/models/user';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router:Router) {
     if (localStorage.getItem("token") != null) {
       this.auth = {
         token: localStorage.getItem("token"),
@@ -46,6 +47,7 @@ export class AuthenticationService {
     this.state.next(false);
     this.auth.token = null;
     this.auth.user = null;
+    this.router.navigateByUrl("/");
   }
 
   signup(name: String, email: String, password: String) {
@@ -54,10 +56,12 @@ export class AuthenticationService {
       email: email,
       password: password,
     }).subscribe((v)=>{
+      console.log(JSON.stringify(v));
       if(v.success && v.data.token != null && v.data.user != null){
-        this.state.next(v.success);
-        this.auth = v.data;
+        console.log("in");
         localStorage.setItem("token", v.data.token);
+        this.auth = v.data;
+        this.state.next(v.success);
       }
     });
   }
