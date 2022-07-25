@@ -17,6 +17,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { UserAvatarComponent } from './components/user-avatar/user-avatar.component';
 import {MatListModule} from '@angular/material/list';
+import { AdminComponent } from './components/admin/admin.component';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 @NgModule({
   declarations: [
@@ -24,6 +27,7 @@ import {MatListModule} from '@angular/material/list';
     AuthenticationComponent,
     BlogsComponent,
     UserAvatarComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,8 @@ import {MatListModule} from '@angular/material/list';
     MatCardModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
