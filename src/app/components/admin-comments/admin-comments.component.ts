@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Comment } from 'src/app/models/comment';
+import { CommentService } from 'src/app/services/comment/comment-service.service';
 
 @Component({
   selector: 'app-admin-comments',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminCommentsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private commentService:CommentService) {}
 
+  public dataSource?:Comment[];
+  public displayedColumns = ["id", "comment","user","avatar","blog_id","created_at","actions"];
   ngOnInit(): void {
+    this.commentService.all();
+    this.commentService.comments.subscribe((v)=>{
+      this.dataSource = v!;
+    });
   }
 
 }
