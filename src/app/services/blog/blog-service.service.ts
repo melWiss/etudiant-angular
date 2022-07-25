@@ -15,16 +15,16 @@ export class BlogService {
     this.all();
   }
 
-  public blogs:BehaviorSubject<Blog[]> = new BehaviorSubject<Blog[]>([]);
-  public blog:BehaviorSubject<Blog|null> = new BehaviorSubject<Blog|null>(null);
+  public blogs: BehaviorSubject<Blog[]> = new BehaviorSubject<Blog[]>([]);
+  public blog: BehaviorSubject<Blog | null> = new BehaviorSubject<Blog | null>(null);
 
   all() {
     this.http.get<ResponseData<Blog[]>>(baseUrl + "/blog", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
       }
-    }).subscribe((v)=>{
-      if(v.success){
+    }).subscribe((v) => {
+      if (v.success) {
         this.blogs.next(v.data);
       }
     });
@@ -35,8 +35,8 @@ export class BlogService {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
       }
-    }).subscribe((v)=>{
-      if(v.success){
+    }).subscribe((v) => {
+      if (v.success) {
         this.blog.next(v.data);
       }
     });
@@ -47,10 +47,23 @@ export class BlogService {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
       }
-    }).subscribe((v)=>{
-      if(v.success){
+    }).subscribe((v) => {
+      if (v.success) {
         this.get(id);
       }
+    });
+  }
+
+  deleteBlog(id: number) {
+    this.http.delete<ResponseData<Blog>>(baseUrl + "/admin/blog/" + id,
+      {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        }
+      }
+    ).subscribe((v)=>{
+      if(v.success)
+        this.all();
     });
   }
 }

@@ -9,7 +9,7 @@ import { BlogService } from 'src/app/services/blog/blog-service.service';
 })
 export class AdminBlogsComponent implements OnInit {
 
-  constructor(private blogService:BlogService) { }
+  constructor(public blogService:BlogService) { }
 
   public dataSource?:Blog[];
   public displayedColumns: string[] = ['id', 'title', 'user', 'avatar', 'created_at', 'actions'];
