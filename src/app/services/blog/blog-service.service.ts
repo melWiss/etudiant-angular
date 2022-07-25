@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { baseUrl } from 'src/app/consts';
 import { Blog } from 'src/app/models/blog';
+import { Comment } from 'src/app/models/comment';
 import { ResponseData } from 'src/app/models/response';
 
 @Injectable({

@@ -16,6 +16,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BlogsComponent } from './components/blogs/blogs.component';
 import { UserAvatarComponent } from './components/user-avatar/user-avatar.component';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { UserAvatarComponent } from './components/user-avatar/user-avatar.compon
     MatGridListModule,
     MatCardModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

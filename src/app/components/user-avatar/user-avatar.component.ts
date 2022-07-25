@@ -8,16 +8,22 @@ import { AuthenticationService } from 'src/app/services/auth/authentication-serv
 })
 export class UserAvatarComponent implements OnInit {
 
+  @Input("name") name?:String;
   imgUrl?: String;
-  constructor(authService: AuthenticationService) {
-    authService.state.subscribe((v) => {
-      if (v && authService.auth.user != null) {
-        this.imgUrl = "https://avatars.dicebear.com/api/adventurer-neutral/" + authService.auth.user.name + ".svg";
-      }
-    })
+  constructor(private authService: AuthenticationService) {
+    
   }
 
   ngOnInit(): void {
+    this.authService.state.subscribe((v) => {
+      if(this.name!=null){
+        this.imgUrl = "https://avatars.dicebear.com/api/adventurer-neutral/" + this.name + ".svg";
+      }else if (v && this.authService.auth.user != null) {
+        this.imgUrl = "https://avatars.dicebear.com/api/adventurer-neutral/" + this.authService.auth.user.name + ".svg";
+      }else {
+        this.imgUrl = "https://avatars.dicebear.com/api/adventurer-neutral/";
+      }
+    })
   }
 
 }

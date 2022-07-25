@@ -1,7 +1,47 @@
-<p>blogs works!</p>
-<div *ngFor="let blog of blogService.blogs.value">
-    <h1>
-
-        {{blog.title}}
-    </h1>
+<div class="blog">
+    <div class="blog-col-1">
+        <div *ngFor="let blog of blogService.blogs.value" style="display: block;">
+            <div class="blog-post">
+                <a routerLink="/{{blog.id}}">
+                    <h2>{{blog.title}}</h2>
+                </a>
+                <img class="blog-img" [src]="blog.imgUrl" />
+                <p class="blog-paragraph">{{blog.text}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="blog-col-2">
+        <h1 *ngIf="blogService.blog.value == null" style="text-align: center;padding-top: 40vh">
+            Click on a blog from the left side
+        </h1>
+        <div *ngIf="blogService.blog.value != null" style="margin: 40px;">
+            <h1>
+                {{blogService.blog.value.title}}
+            </h1>
+            <img [src]="blogService.blog.value.imgUrl" class="blog-img" style="height: 600px;" />
+            <p style="padding: 20px;">{{blogService.blog.value.text}}</p>
+            <mat-list>
+                <div mat-subheader>Comment on this post</div>
+                <mat-list-item>
+                    <mat-icon mat-list-icon>
+                        <app-user-avatar [name]="authService.auth.user?.name"></app-user-avatar>
+                    </mat-icon>
+                    <!--<app-user-avatar [name]="authService.auth.user?.name"></app-user-avatar>-->
+                    <div mat-line>{{authService.auth.user?.name}}</div>
+                    <div mat-line> <input type="text" id="comment" [formControl]="comment" /> <button (click)="commentOn()">comment</button> </div>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <div mat-subheader>Comments</div>
+                <mat-list-item *ngFor="let comment of blogService.blog.value.comments">
+                    <mat-icon mat-list-icon>
+                        <app-user-avatar [name]="comment.user?.name"></app-user-avatar>
+                    </mat-icon>
+                    <!--<app-user-avatar [name]="comment.user.name"></app-user-avatar>-->
+                    <div mat-line>{{comment.user?.name}}</div>
+                    <div mat-line> {{comment.comment}} </div>
+                    <button mat-icon-button (click)="deleteComment(comment.id!)" *ngIf="comment.user_id == authService.auth.user?.id">delete</button>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
 </div>

@@ -4,7 +4,8 @@ import { AppComponent } from './app.component';
 import { BlogsComponent } from './components/blogs/blogs.component';
 
 const routes: Routes = [
-  {path: "", component: BlogsComponent}
+  {path: "", component: BlogsComponent},
+  {path: ":id", component: BlogsComponent},
 ];
 
 @NgModule({
