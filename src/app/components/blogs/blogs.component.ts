@@ -43,5 +43,11 @@ export class BlogsComponent implements OnInit {
         this.blogService.get(this.blogID!);
     });
   }
+  deleteAdminComment(id: number) {
+    this.commentService.deleteAdminComment(id).subscribe((v) => {
+      if (v.success)
+        this.blogService.get(this.blogID!);
+    });
+  }
 
 }

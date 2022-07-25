@@ -39,7 +39,8 @@
                     <!--<app-user-avatar [name]="comment.user.name"></app-user-avatar>-->
                     <div mat-line>{{comment.user?.name}}</div>
                     <div mat-line> {{comment.comment}} </div>
-                    <button mat-icon-button (click)="deleteComment(comment.id!)" *ngIf="comment.user_id == authService.auth.user?.id">delete</button>
+                    <button mat-icon-button (click)="deleteComment(comment.id!)" *ngIf="comment.user_id == authService.auth.user?.id && !authService.auth.user?.is_admin">delete</button>
+                    <button mat-icon-button (click)="deleteAdminComment(comment.id!)" *ngIf="authService.auth.user?.is_admin">delete</button>
                 </mat-list-item>
             </mat-list>
         </div>

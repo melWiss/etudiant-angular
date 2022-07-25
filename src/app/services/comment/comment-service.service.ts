@@ -19,4 +19,11 @@ export class CommentService {
       }
     });
   }
+  deleteAdminComment(id: number){
+    return this.http.delete<ResponseData<Comment>>(baseUrl+"/admin/comments/"+id, {
+      headers: {
+        Authorization: "Bearer "+localStorage.getItem("token"),
+      }
+    });
+  }
 }
