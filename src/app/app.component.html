@@ -12,8 +12,11 @@
   <span>Blog App</span>
   <span class="example-spacer"></span>
   <app-user-avatar *ngIf="auth.state.value" ></app-user-avatar>
-  <button *ngIf="auth.state.value && auth.auth.user?.is_admin" mat-icon-button>
+  <button *ngIf="auth.state.value && auth.auth.user?.is_admin" mat-icon-button (click)="goDashboard()">
     <mat-icon>dashboard</mat-icon>
+  </button>
+  <button *ngIf="auth.state.value" mat-icon-button (click)="goHome()">
+    <mat-icon>home</mat-icon>
   </button>
   <button *ngIf="auth.state.value" mat-icon-button (click)="auth.logout()">
     <mat-icon>logout</mat-icon>

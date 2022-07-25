@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthenticationService } from './services/auth/authentication-service.service';
 
 @Component({
@@ -9,5 +10,12 @@ import { AuthenticationService } from './services/auth/authentication-service.se
 export class AppComponent {
   title = 'etudiant';
 
-  constructor(public auth:AuthenticationService){}
+  constructor(public auth:AuthenticationService, private router:Router){}
+
+  goHome(){
+    this.router.navigateByUrl("/");
+  }
+  goDashboard(){
+    this.router.navigateByUrl("/admin");
+  }
 }

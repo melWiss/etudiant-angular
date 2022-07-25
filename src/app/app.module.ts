@@ -19,6 +19,9 @@ import { UserAvatarComponent } from './components/user-avatar/user-avatar.compon
 import {MatListModule} from '@angular/material/list';
 import { AdminComponent } from './components/admin/admin.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { AdminBlogsComponent } from './components/admin-blogs/admin-blogs.component';
+import { AdminUsersComponent } from './components/admin-users/admin-users.component';
+import { AdminCommentsComponent } from './components/admin-comments/admin-comments.component';
 
 
 @NgModule({
@@ -28,6 +31,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     BlogsComponent,
     UserAvatarComponent,
     AdminComponent,
+    AdminBlogsComponent,
+    AdminUsersComponent,
+    AdminCommentsComponent,
   ],
   imports: [
     BrowserModule,
