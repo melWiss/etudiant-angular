@@ -1,0 +1,15 @@
+<button mat-flat-button (click)="goBack()" color="primary" style="margin: 5px;">
+    <mat-icon>arrow_back</mat-icon>
+    Back
+</button>
+
+<div style="margin: 20px;">
+    <h1>{{blogService.blog.value?.title}}</h1>
+    <h2>Blog ID: {{blogService.blog.value?.id}}</h2>
+    <img [src]="blogService.blog.value?.imgUrl" style="width: 300px; height: 300px; object-fit: cover;">
+    <h2>User Name: {{blogService.blog.value?.user?.name}}</h2>
+    <h2>User ID: {{blogService.blog.value?.user_id}}</h2>
+    <h2>Text:</h2>
+    <p>{{blogService.blog.value?.text}}</p>
+    
+</div>

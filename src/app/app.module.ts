@@ -27,6 +27,8 @@ import { NewBlogComponent } from './components/new-blog/new-blog.component';
 import { NewUserComponent } from './components/new-user/new-user.component';
 import { NewCommentComponent } from './components/new-comment/new-comment.component';
 import { DetailsUserComponent } from './components/details-user/details-user.component';
+import { DetailsBlogComponent } from './components/details-blog/details-blog.component';
+import { DetailsCommentComponent } from './components/details-comment/details-comment.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { DetailsUserComponent } from './components/details-user/details-user.com
     NewUserComponent,
     NewCommentComponent,
     DetailsUserComponent,
+    DetailsBlogComponent,
+    DetailsCommentComponent,
   ],
   imports: [
     BrowserModule,

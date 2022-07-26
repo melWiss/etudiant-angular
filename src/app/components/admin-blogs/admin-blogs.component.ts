@@ -26,4 +26,8 @@ export class AdminBlogsComponent implements OnInit {
     this.router.navigateByUrl("/admin/blogs/new");
   }
 
+  showDetails(id: number) {
+    this.router.navigateByUrl("/admin/blogs/"+id);
+  }
+
 }

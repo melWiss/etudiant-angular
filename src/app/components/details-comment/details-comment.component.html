@@ -1,0 +1,13 @@
+<button mat-flat-button (click)="goBack()" color="primary" style="margin: 5px;">
+    <mat-icon>arrow_back</mat-icon>
+    Back
+</button>
+
+<div style="margin: 20px;">
+    <h1>{{commentService.comment.value?.comment}}</h1>
+    <h2>ID: {{commentService.comment.value?.id}}</h2>
+    <h2>Blog ID: {{commentService.comment.value?.blog_id}}</h2>
+    <h2>User Name: {{commentService.comment.value?.user?.name}}</h2>
+    <h2>User ID: {{commentService.comment.value?.user_id}}</h2>
+    
+</div>

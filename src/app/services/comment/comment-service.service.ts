@@ -24,6 +24,16 @@ export class CommentService {
       }
     });
   }
+  get(id: number) {
+    this.http.get<ResponseData<Comment>>(baseUrl + "/admin/comments/" + id, {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      }
+    }).subscribe((v)=>{
+      if(v.success)
+        this.comment.next(v.data);
+    });
+  }
   deleteAdminComment(id: number) {
     return this.http.delete<ResponseData<Comment>>(baseUrl + "/admin/comments/" + id, {
       headers: {

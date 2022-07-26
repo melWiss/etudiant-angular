@@ -1,6 +1,7 @@
 import { DataSource } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user/user-service.service';
 
@@ -11,7 +12,7 @@ import { UserService } from 'src/app/services/user/user-service.service';
 })
 export class AdminUsersComponent implements OnInit {
 
-  constructor(public userService:UserService) { }
+  constructor(public userService:UserService, private router:Router) { }
 
   public dataSource?:User[];
   public displayedColumns: string[] = ['id', 'name', 'avatar', 'email', 'is_admin', 'actions'];
@@ -21,6 +22,10 @@ export class AdminUsersComponent implements OnInit {
     this.userService.users.subscribe((v)=>{
       this.dataSource = v!;
     })
+  }
+
+  showDetails(id: number) {
+    this.router.navigateByUrl("/admin/users/"+id);
   }
 
 }
