@@ -20,4 +20,11 @@ export class AdminCommentsComponent implements OnInit {
     });
   }
 
+  delete(id:number){
+    this.commentService.deleteAdminComment(id).subscribe((v)=>{
+      if(v.success)
+        this.commentService.all();
+    });
+  }
+
 }

@@ -26,6 +26,7 @@ import {MatTableModule} from '@angular/material/table';
 import { NewBlogComponent } from './components/new-blog/new-blog.component';
 import { NewUserComponent } from './components/new-user/new-user.component';
 import { NewCommentComponent } from './components/new-comment/new-comment.component';
+import { DetailsUserComponent } from './components/details-user/details-user.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { NewCommentComponent } from './components/new-comment/new-comment.compon
     NewBlogComponent,
     NewUserComponent,
     NewCommentComponent,
+    DetailsUserComponent,
   ],
   imports: [
     BrowserModule,
