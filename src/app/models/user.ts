@@ -1,6 +1,7 @@
 export interface User {
-    id: number;
+    id: number|null;
     name: String;
     email: String;
+    password: String|null;
     is_admin:boolean;
 }

@@ -24,6 +24,14 @@ export class AdminUsersComponent implements OnInit {
     })
   }
 
+  add(){
+    this.router.navigateByUrl("/admin/users/new");
+  }
+
+  update(id:number){
+    this.router.navigateByUrl("/admin/users/update/"+id);
+  }
+
   showDetails(id: number) {
     this.router.navigateByUrl("/admin/users/"+id);
   }

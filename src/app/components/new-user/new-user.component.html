@@ -1,1 +1,13 @@
-<p>new-user works!</p>
+<div style="margin: 20px;">
+    <h1 *ngIf="!update">Add User</h1>
+    <h1 *ngIf="update">Update User</h1>
+    <label for="email">Email </label>
+    <input id="email" type="email" style="margin: 5px;" [formControl]="email" /><br>
+    <label for="password">Password </label>
+    <input id="password" type="password" style="margin: 5px;" [formControl]="password" /><br>
+    <label for="name">Full Name </label>
+    <input id="name" type="text" style="margin: 5px;" [formControl]="fullName" /><br>
+    <label for="name">Is Admin </label>
+    <input id="name" type="checkbox" style="margin: 5px;" [formControl]="isAdmin" /><br>
+    <button mat-flat-button color="primary" style="margin: 5px;" (click)="submit()">Submit</button>
+</div>

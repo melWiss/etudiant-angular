@@ -1,9 +1,11 @@
 <div style="margin: 20px;">
-    <h2>Title</h2>
-    <input type="text" [formControl]="title" />
-    <h2>Text</h2>
-    <input type="text" [formControl]="text" />
-    <h2>Picture</h2>
-    <input type="file" (change)="onSelectFile($event)" accept="image/png, image/jpeg" />
+    <h1 *ngIf="!update">Add User</h1>
+    <h1 *ngIf="update">Update User</h1>
+    <label for="title">Title </label>
+    <input id="title" type="text" [formControl]="title" /><br>
+    <label for="text">Text </label>
+    <textarea id="text" type="text" [formControl]="text" rows="8" cols="200"></textarea><br>
+    <label for="picture">Picture </label>
+    <input id="picture" type="file" (change)="onSelectFile($event)" accept="image/png, image/jpeg" />
     <button mat-flat-button color="primary" (click)="submit()">Submit</button>
 </div>

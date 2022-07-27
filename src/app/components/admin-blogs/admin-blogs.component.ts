@@ -26,6 +26,10 @@ export class AdminBlogsComponent implements OnInit {
     this.router.navigateByUrl("/admin/blogs/new");
   }
 
+  update(id:number){
+    this.router.navigateByUrl("/admin/blogs/update/"+id);
+  }
+
   showDetails(id: number) {
     this.router.navigateByUrl("/admin/blogs/"+id);
   }

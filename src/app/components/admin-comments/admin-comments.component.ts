@@ -21,6 +21,10 @@ export class AdminCommentsComponent implements OnInit {
     });
   }
 
+  add(){
+    this.router.navigateByUrl("/admin/comments/new");
+  }
+
   delete(id:number){
     this.commentService.deleteAdminComment(id).subscribe((v)=>{
       if(v.success)

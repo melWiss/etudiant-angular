@@ -37,7 +37,7 @@
             <button mat-icon-button (click)="showDetails(element.id)">
                 <mat-icon>visibility</mat-icon>
             </button>
-            <button mat-icon-button>
+            <button mat-icon-button (click)="update(element.id)">
                 <mat-icon>edit</mat-icon>
             </button>
             <button mat-icon-button (click)="blogService.deleteBlog(element.id)">

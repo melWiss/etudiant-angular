@@ -1,4 +1,4 @@
-<button style="margin: 5px;" mat-flat-button color="primary">
+<button style="margin: 5px;" mat-flat-button color="primary" (click)="add()">
     <mat-icon>add</mat-icon> Add
 </button>
 <table mat-table [dataSource]="dataSource!" style="width: 100%;">
@@ -42,7 +42,7 @@
             <button mat-icon-button (click)="showDetails(element.id)">
                 <mat-icon>visibility</mat-icon>
             </button>
-            <button mat-icon-button>
+            <button mat-icon-button (click)="update(element.id)">
                 <mat-icon>edit</mat-icon>
             </button>
             <button mat-icon-button (click)="userService.delete(element.id)">
