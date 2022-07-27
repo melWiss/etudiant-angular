@@ -11,7 +11,9 @@ import { AuthenticationService } from '../auth/authentication-service.service';
 })
 export class UserService {
 
-  constructor(private http: HttpClient, private authService: AuthenticationService) { }
+  constructor(private http: HttpClient, private authService: AuthenticationService) {
+    this.all();
+  }
 
   public users: BehaviorSubject<User[] | null> = new BehaviorSubject<User[] | null>(null);
   public user: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);

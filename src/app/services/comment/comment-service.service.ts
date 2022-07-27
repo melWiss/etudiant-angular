@@ -29,10 +29,22 @@ export class CommentService {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
       }
-    }).subscribe((v)=>{
-      if(v.success)
+    }).subscribe((v) => {
+      if (v.success)
         this.comment.next(v.data);
     });
+  }
+  update(id: number, comment: Comment) {
+    this.http.put<ResponseData<Comment>>(baseUrl + "/admin/comments/" + id,
+      comment,
+      {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        }
+      }).subscribe((v) => {
+        if (v.success)
+          this.comment.next(v.data);
+      });
   }
   deleteAdminComment(id: number) {
     return this.http.delete<ResponseData<Comment>>(baseUrl + "/admin/comments/" + id, {
@@ -53,6 +65,18 @@ export class CommentService {
     ).subscribe((v) => {
       if (v.success)
         this.comments.next(v.data);
+    });
+  }
+
+  add(comment: Comment) {
+    this.http.post<ResponseData<Comment>>(baseUrl + "/admin/comments", comment, {
+      headers: {
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      }
+    }).subscribe((v) => {
+      if (v.success) {
+        this.get(comment.id!);
+      }
     });
   }
 }

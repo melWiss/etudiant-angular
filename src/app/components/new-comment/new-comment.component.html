@@ -1,1 +1,19 @@
-<p>new-comment works!</p>
+<div style="margin: 20px;">
+    <h1 *ngIf="!update">Add Comment</h1>
+    <h1 *ngIf="update">Update Comment</h1>
+    <label for="comment">Comment </label>
+    <input id="comment" type="text" [formControl]="comment" /><br>
+    <label for="user">User </label>
+    <select id="user" [formControl]="user">
+        <option *ngFor="let user of userService.users.value" [value]="user.id">
+            {{user.name}}
+        </option>
+    </select><br>
+    <label for="blog">Blog </label>
+    <select id="blog" [formControl]="blog">
+        <option *ngFor="let blog of blogService.blogs.value" [value]="blog.id">
+            {{blog.title}}
+        </option>
+    </select>
+    <button mat-flat-button color="primary" (click)="submit()">Submit</button>
+</div>

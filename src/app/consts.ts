@@ -1,5 +1,11 @@
-// const baseUrl:String = "http://127.0.0.1:8000/api";
-const baseUrl:String = "https://etudiant-angular.herokuapp.com/api";
-// const baseUrl:String = "/api";
+import { environment } from "src/environments/environment";
 
-export {baseUrl};
+var baseUrl: String;
+if (environment.production) {
+    baseUrl = "/api";
+} else {
+    // const baseUrl:String = "http://127.0.0.1:8000/api";
+    baseUrl = "https://etudiant-angular.herokuapp.com/api";
+}
+
+export { baseUrl };
